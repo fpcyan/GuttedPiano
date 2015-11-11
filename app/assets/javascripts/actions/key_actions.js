@@ -3,6 +3,7 @@ window.KeyActions = {
 
 
   keyPressed: function (keycode) {
+
     AppDispatcher.dispatch({ eventType: 'add key', noteName: window.KEYPRESSES[keycode] });
   },
 

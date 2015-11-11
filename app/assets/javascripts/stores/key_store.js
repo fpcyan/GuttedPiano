@@ -19,15 +19,20 @@
     this.emit('change');
   };
 
+  KeyStore.all = function () {
+    return _playedKeys.slice();
+  };
+
   KeyStore.dispatcherId = AppDispatcher.register(function (payload) {
     switch (payload.eventType) {
       case 'add key':
         _playedKeys.push(payload.noteName);
         KeyStore.changed();
+
         break;
       case 'remove key':
-        _playedKeys.filter( function(playedKey) {
-          return payload.noteName === playedKey;
+        _playedKeys = _playedKeys.filter( function(playedKey) {
+          return payload.noteName !== playedKey;
         });
         KeyStore.changed();
         break;

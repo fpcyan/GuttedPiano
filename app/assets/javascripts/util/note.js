@@ -7,7 +7,6 @@
     this.frequency = frequency;
     this.oscillatorNode = this.createOscillator(frequency);
     this.gainNode = this.createGainNode();
-
     this.oscillatorNode.connect(this.gainNode);
   };
 

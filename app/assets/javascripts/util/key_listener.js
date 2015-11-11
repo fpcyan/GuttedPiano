@@ -1,10 +1,9 @@
 (function () {
   $(document).on('keydown', function (e) {
-
-    KeyActions.keyPressed(e.keycode);
+    KeyActions.keyPressed(e.keyCode);
   });
 
   $(document).on('keyup', function (e) {
-    KeyActions.keyReleased(e.keycode);
+    KeyActions.keyReleased(e.keyCode);
   });
 })();
