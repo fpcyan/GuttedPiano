@@ -11,12 +11,12 @@ window.TONES = {
 };
 
 window.KEYPRESSES = {
-  "65": TONES.C,
-  "83": TONES.D,
-  "68": TONES.E,
-  "70": TONES.F,
-  "71": TONES.G,
-  "72": TONES.A,
-  "74": TONES.B,
-  "75": TONES.C_LAST
+  65: "C",
+  83: "D",
+  68: "E",
+  70: "F",
+  71: "G",
+  72: "A",
+  74: "B",
+  75: "C_LAST"
 };

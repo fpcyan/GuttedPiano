@@ -36,6 +36,9 @@
         });
         KeyStore.changed();
         break;
+      case 'smash the keyboard':
+        _playedKeys = payload.noteNames;
+        KeyStore.changed();
     }
   });
 

@@ -1,9 +1,9 @@
 (function () {
   $(document).on('keydown', function (e) {
-    KeyActions.keyPressed(e.keyCode);
+    KeyActions.keyPressed(window.KEYPRESSES[e.keyCode]);
   });
 
   $(document).on('keyup', function (e) {
-    KeyActions.keyReleased(e.keyCode);
+    KeyActions.keyReleased(window.KEYPRESSES[e.keyCode]);
   });
 })();

@@ -2,12 +2,13 @@ var Organ = React.createClass({
 
   render: function () {
     return (
-      <div>
-        {Object.keys(window.TONES).map(function (tone) {
+      <div className="organ">
+        {Object.keys(window.TONES).map(function (keypress) {
           return (
-            <Key key={tone} noteName={window.TONES[tone]}/>
+            <Key key={keypress} noteName={keypress} />
           );
         })}
+        <Recorder />
       </div>
     );
   }
@@ -30,8 +31,7 @@ var Key = React.createClass({
   },
 
   componentDidMount: function () {
-
-    this.setState({ note: new window.Note(this.props.noteName) });
+    this.setState({ note: new window.Note(window.TONES[this.props.noteName]) });
 
     KeyStore.addChangeHandler(this.maybePlayNote);
   },
@@ -49,7 +49,7 @@ var Key = React.createClass({
 
   render: function () {
     return (
-      <li></li>
+      <li>{this.props.noteName}</li>
     );
   }
 });
